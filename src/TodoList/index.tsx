@@ -2,7 +2,7 @@ import React, { useState, ChangeEvent } from 'react';
 
 import useStore from './useStore';
 
-const Zustand = () => {
+const TodoList = () => {
   const [todoText, setTodoText] = useState('');
   const { addTodo, removeTodo, toggleCompleted, todos } = useStore();
 
@@ -16,22 +16,26 @@ const Zustand = () => {
 
   return (
     <div>
-      Zustand
-      <input onChange={handleInput} />
-      <button type='button' onClick={handleAddTodo}>
-        Add
-      </button>
+      <h3>할 일 추가하기</h3>
+
+      <div>
+        <input onChange={handleInput} />
+        <button type='button' onClick={handleAddTodo}>
+          Add
+        </button>
+      </div>
+
       {todos.map(({ id, description, hasCompleted }) => (
-        <>
-          <p key={id}>{description}</p>
+        <div key={id}>
           <input type='checkbox' checked={hasCompleted} onChange={() => toggleCompleted(id)} />
+          <span key={id}>{description}</span>
           <button type='button' onClick={handleRemoveTodo(id)}>
             Remove
           </button>
-        </>
+        </div>
       ))}
     </div>
   );
 };
 
-export default Zustand;
+export default TodoList;
