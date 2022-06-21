@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Zustand } from './pages/index.tsx';
+import Zustand from './Zustand/index';
 
 const App = () => {
   return <Zustand />;
