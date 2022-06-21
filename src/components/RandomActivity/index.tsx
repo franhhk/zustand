@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { useSuggestActivityQuery } from './useSuggestActivityQuery';
-import useStore from '../hooks/useStore';
+import useStore from '../../hooks/useStore';
 
 const RandomActivity = () => {
   const { data, isSuccess, refetch } = useSuggestActivityQuery();
