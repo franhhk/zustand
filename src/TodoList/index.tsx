@@ -1,6 +1,6 @@
 import React, { useState, ChangeEvent } from 'react';
 
-import useStore from './useStore';
+import useStore from '../hooks/useStore';
 
 const TodoList = () => {
   const [todoText, setTodoText] = useState('');
